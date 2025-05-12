@@ -1,0 +1,57 @@
+[
+  {
+      "nom":"poivre",
+      "code_barre": "3166296550371",
+      "lien": "https://world.openfoodfacts.org/product/3166296550371/moulin-poivre-noir-ducros"
+    },
+  {
+      "nom":"sel",
+      "code_barre": "3252378000954",
+      "lien": "https://fr.openfoodfacts.org/produit/3252378000954/sel-fin-iode-cerebos"
+    },
+  {
+      "nom":"cumin",
+      "code_barre": "3700483800629",
+      "lien": "https://world.openfoodfacts.org/product/3700483800629/cumin-moulu-mosaique"
+    },
+  {
+      "nom":"baguette de pain",
+      "code_barre": "0202057006367",
+      "lien": "https://fr.openfoodfacts.org/produit/0202057006367/baguette-pain-blanc"
+    },
+  {
+      "nom":"lait",
+      "code_barre": "8410285127323",
+      "lien": "https://world.openfoodfacts.org/product/8410285127323/lait-demi-ecreme-president"
+    },
+  {
+      "nom":"oeufs",
+      "code_barre": "3760224690247",
+      "lien": "https://world.openfoodfacts.org/product/3760224690247/oeufs-frais"
+    },
+  {
+      "nom":"tomates confites à l'huile",
+      "code_barre": "3271514118117",
+      "lien": "https://world.openfoodfacts.org/product/3271514118117/tomates-confites-a-l-ail-et-au-persil-jean-martin"
+    },
+  {
+      "nom":"oilves noires à la grecque",
+      "code_barre": "3250391082377",
+      "lien": "https://world.openfoodfacts.org/product/3250391082377/olives-noires-a-la-grecque-netto"
+    },
+  {
+      "nom":"yaourt nature",
+      "code_barre": "3033490905392",
+      "lien": "https://world.openfoodfacts.org/product/3033490905392/yaourt-nature-danone"
+    },
+  {
+      "nom":"parmesan râpé",
+      "code_barre": "3350033275966",
+      "lien": "https://world.openfoodfacts.org/product/3350033275966/parmesan-rape-monoprix"
+    },
+  {
+      "nom":"petits piments doux verts",
+      "code_barre": "3450120000799",
+      "lien": "https://world.openfoodfacts.org/product/3450120000799/piments-verts-doux-guindillas-la-ciota"
+    }
+]
