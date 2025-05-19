@@ -16,77 +16,85 @@
       object-fit: cover;
       border-radius: 12px;
     }
-
     .section-title {
-        position: relative;
-        display: inline-block;
-        padding-bottom: 0.5rem;
-        margin-bottom: 1.5rem;
-        }
-
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
     .section-title::after {
-        content: "";
-        position: absolute;
-        width: 50px;
-        height: 3px;
-        background-color: #ffc107; /* couleur jaune doré Bootstrap */
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 2px;
-        }
-        .footer {
-            background-color: #f8f9fa; /* gris clair Bootstrap */
-            margin-top: 4rem;
-            }
-        footer .section-title::after {
-        background-color: #6c757d; /* gris moyen */
-        }
-
-
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background-color: #ffc107;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    .footer {
+      background-color: #f8f9fa;
+      margin-top: 4rem;
+    }
+    footer .section-title::after {
+      background-color: #6c757d;
+    }
+    .card-img-top {
+      width: 50%;
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 0.375rem;
+      border-top-right-radius: 0.375rem;
+    }
+    .card-body img.nutriscore {
+      height: 40px;
+      object-fit: contain;
+    }
+    .nutri-img {
+      height: 40px;
+    }
   </style>
 </head>
 <body>
 
   <div class="container py-4">
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Menu</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#ingredients">Ingrédients</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#preparation">Préparation</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#apropos">À propos</a>
-          </li>
-        </ul>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Menu</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#ingredients">Ingrédients</a></li>
+            <li class="nav-item"><a class="nav-link" href="#preparation">Préparation</a></li>
+            <li class="nav-item"><a class="nav-link" href="#apropos">À propos</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-    
+    </nav>
+
     <!-- Header -->
     <header class="text-center mb-5">
-      <img 
-        src="https://assets.afcdn.com/recipe/20161115/42226_w1024h1024c1cx1831cy2746cxt0cyt0cxb3662cyb5493.jpg" 
-        alt="Pudding maison" 
-        class="header-img">
+      <img src="https://assets.afcdn.com/recipe/20161115/42226_w1024h1024c1cx1831cy2746cxt0cyt0cxb3662cyb5493.jpg" 
+           alt="Pudding maison" 
+           class="header-img">
       <h1 class="mt-3 mb-2">Pudding de pain perdu au parmesan</h1>
     </header>
-
 
     <!-- Ingrédients -->
     <section id="ingredients" class="mb-5">
       <h2 class="section-title">Ingrédients</h2>
-      <!-- Liste ou cards à insérer ici -->
+
+      <div class="text-center my-3">
+        <h5>Nutri-Score global :</h5>
+        <img id="global-nutriscore-img" src="" alt="Nutri-Score global" class="nutri-img">
+      </div>
+
+      <div id="ingredients-list" class="row"></div>
     </section>
 
     <!-- Préparation -->
@@ -97,14 +105,95 @@
 
   </div>
 
-    <!-- Pied de page -->
-    <footer id="apropos" class="text-center py-4 border-top">
-        <h2 class="section-title">À propos</h2>
-        <p class="mb-0">IF08 - Printemps 2025</p>
-    </footer>
-
+  <!-- Pied de page -->
+  <footer id="apropos" class="text-center py-4 border-top">
+    <h2 class="section-title">À propos</h2>
+    <p class="mb-0">IF08 - Printemps 2025</p>
+  </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const ingredients = [
+        {"nom":"poivre", "code_barre": "3166296550371", "nutriscore": "NA","image": "https://images.openfoodfacts.org/images/products/316/629/655/0371/front_fr.13.400.jpg"},
+        {"nom":"sel", "code_barre": "3252378000954", "nutriscore": "NA", "image": "https://images.openfoodfacts.org/images/products/325/237/800/0954/front_fr.114.400.jpg"},
+        {"nom":"cumin", "code_barre": "3700483800629", "nutriscore": "NA", "image": "https://images.openfoodfacts.org/images/products/370/048/380/0629/front_fr.10.400.jpg"},
+        {"nom":"baguette de pain", "code_barre": "0202057006367", "nutriscore": "NA", "image": "https://images.openfoodfacts.org/images/products/020/205/700/6367/front_fr.4.400.jpg"},
+        {"nom":"lait", "code_barre": "8410285127323", "nutriscore": "B", "image": "https://images.openfoodfacts.org/images/products/841/028/512/7323/front_en.6.400.jpg"},
+        {"nom":"oeufs", "code_barre": "3760224690247", "nutriscore": "A", "image": "https://images.openfoodfacts.org/images/products/376/022/469/0247/front_fr.10.400.jpg"},
+        {"nom":"tomates confites à l'huile", "code_barre": "3271514118117", "nutriscore": "D", "image": "https://images.openfoodfacts.org/images/products/327/151/411/8117/front_fr.22.400.jpg"},
+        {"nom":"oilves noires à la grecque", "code_barre": "3250391082377", "nutriscore": "D", "image": "https://images.openfoodfacts.org/images/products/325/039/108/2377/front_fr.4.400.jpg"},
+        {"nom":"yaourt nature", "code_barre": "3033490905392", "nutriscore": "A", "image": "https://images.openfoodfacts.org/images/products/303/349/090/5392/front_fr.3.400.jpg"},
+        {"nom":"parmesan râpé", "code_barre": "3350033275966", "nutriscore": "D", "image": "https://images.openfoodfacts.org/images/products/335/003/327/5966/front_fr.28.400.jpg"},
+        {"nom":"petits piments doux verts", "code_barre": "3450120000799", "nutriscore": "NA","image": "https://images.openfoodfacts.org/images/products/345/012/000/0799/front_fr.11.400.jpg"}
+      ];
+
+      const nutriMap = { A: 1, B: 2, C: 3, D: 4, E: 5 };
+      const reverseNutriMap = { 1: 'A', 2: 'B', 3: 'C', 4: 'D', 5: 'E' };
+      const nutriImgURL = (letter) => `https://static.openfoodfacts.org/images/misc/nutriscore-${letter.toLowerCase()}.svg`;
+
+      const container = document.getElementById("ingredients-list");
+      let totalScore = 0;
+      let scoredCount = 0;
+
+      ingredients.forEach((ingredient) => {
+        const col = document.createElement("div");
+        col.className = "col-lg-4";
+
+        const card = document.createElement("div");
+        card.className = "card mb-4";
+
+        const img = document.createElement("img");
+        img.className = "card-img-top";
+        img.src = ingredient.image;
+        img.alt = `Image de ${ingredient.nom}`;
+
+        const body = document.createElement("div");
+        body.className = "card-body";
+
+        const title = document.createElement("h5");
+        title.className = "card-title";
+        title.textContent = ingredient.nom;
+
+        const nutriImgURL = (letter) => 
+        `https://static.openfoodfacts.org/images/misc/nutriscore-${letter.toLowerCase()}.svg`;
+
+        const nutriGreyImgURL = () => 
+        "https://static.openfoodfacts.org/images/misc/nutriscore-grey.svg";
+
+
+        if (ingredient.nutriscore == "NA") {
+      const nutriImg = document.createElement("img");
+      nutriImg.src = nutriGreyImgURL();
+      nutriImg.alt = "Nutri-Score indisponible";
+      nutriImg.className = "nutriscore opacity-50";  // Bootstrap class for faded look
+      body.appendChild(nutriImg);
+    }
+
+        body.appendChild(title);
+
+        if (ingredient.nutriscore !== "NA") {
+          const nutriImg = document.createElement("img");
+          nutriImg.src = nutriImgURL(ingredient.nutriscore);
+          nutriImg.alt = `Nutri-Score ${ingredient.nutriscore}`;
+          nutriImg.className = "nutriscore";
+          body.appendChild(nutriImg);
+
+          const score = nutriMap[ingredient.nutriscore.toUpperCase()];
+          totalScore += score;
+          scoredCount++;
+        }
+
+        card.appendChild(img);
+        card.appendChild(body);
+        col.appendChild(card);
+        container.appendChild(col);
+      });
+
+    });
+  </script>
+
 </body>
 </html>
