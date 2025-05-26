@@ -1,57 +1,79 @@
 [
   {
-      "nom":"poivre",
-      "code_barre": "3166296550371",
-      "lien": "https://world.openfoodfacts.org/product/3166296550371/moulin-poivre-noir-ducros"
-    },
+    "nom": "poivre",
+    "code_barre": "3166296550371",
+    "lien": "https://world.openfoodfacts.org/product/3166296550371/moulin-poivre-noir-ducros",
+    "nutriscore": "A",
+    "image": "https://images.openfoodfacts.org/images/products/316/629/655/0371/front_fr.13.400.jpg"
+  },
   {
-      "nom":"sel",
-      "code_barre": "3252378000954",
-      "lien": "https://fr.openfoodfacts.org/produit/3252378000954/sel-fin-iode-cerebos"
-    },
+    "nom": "sel",
+    "code_barre": "3252378000954",
+    "lien": "https://fr.openfoodfacts.org/produit/3252378000954/sel-fin-iode-cerebos",
+    "nutriscore": "C",
+    "image": "https://images.openfoodfacts.org/images/products/325/237/800/0954/front_fr.114.400.jpg"
+  },
   {
-      "nom":"cumin",
-      "code_barre": "3700483800629",
-      "lien": "https://world.openfoodfacts.org/product/3700483800629/cumin-moulu-mosaique"
-    },
+    "nom": "cumin",
+    "code_barre": "3700483800629",
+    "lien": "https://world.openfoodfacts.org/product/3700483800629/cumin-moulu-mosaique",
+    "nutriscore": "A",
+    "image": "https://images.openfoodfacts.org/images/products/370/048/380/0629/front_fr.10.400.jpg"
+  },
   {
-      "nom":"baguette de pain",
-      "code_barre": "0202057006367",
-      "lien": "https://fr.openfoodfacts.org/produit/0202057006367/baguette-pain-blanc"
-    },
+    "nom": "baguette de pain",
+    "code_barre": "0202057006367",
+    "lien": "https://fr.openfoodfacts.org/produit/0202057006367/baguette-pain-blanc",
+    "nutriscore": "C",
+    "image": "https://images.openfoodfacts.org/images/products/020/205/700/6367/front_fr.4.400.jpg"
+  },
   {
-      "nom":"lait",
-      "code_barre": "8410285127323",
-      "lien": "https://world.openfoodfacts.org/product/8410285127323/lait-demi-ecreme-president"
-    },
+    "nom": "lait",
+    "code_barre": "8410285127323",
+    "lien": "https://world.openfoodfacts.org/product/8410285127323/lait-demi-ecreme-president",
+    "nutriscore": "B",
+    "image": "https://images.openfoodfacts.org/images/products/841/028/512/7323/front_en.6.400.jpg"
+  },
   {
-      "nom":"oeufs",
-      "code_barre": "3760224690247",
-      "lien": "https://world.openfoodfacts.org/product/3760224690247/oeufs-frais"
-    },
+    "nom": "oeufs",
+    "code_barre": "3760224690247",
+    "lien": "https://world.openfoodfacts.org/product/3760224690247/oeufs-frais",
+    "nutriscore": "A",
+    "image": "https://images.openfoodfacts.org/images/products/376/022/469/0247/front_fr.10.400.jpg"
+  },
   {
-      "nom":"tomates confites à l'huile",
-      "code_barre": "3271514118117",
-      "lien": "https://world.openfoodfacts.org/product/3271514118117/tomates-confites-a-l-ail-et-au-persil-jean-martin"
-    },
+    "nom": "tomates confites à l'huile",
+    "code_barre": "3271514118117",
+    "lien": "https://world.openfoodfacts.org/product/3271514118117/tomates-confites-a-l-ail-et-au-persil-jean-martin",
+    "nutriscore": "D",
+    "image": "https://images.openfoodfacts.org/images/products/327/151/411/8117/front_fr.22.400.jpg"
+  },
   {
-      "nom":"oilves noires à la grecque",
-      "code_barre": "3250391082377",
-      "lien": "https://world.openfoodfacts.org/product/3250391082377/olives-noires-a-la-grecque-netto"
-    },
+    "nom": "oilves noires à la grecque",
+    "code_barre": "3250391082377",
+    "lien": "https://world.openfoodfacts.org/product/3250391082377/olives-noires-a-la-grecque-netto",
+    "nutriscore": "D",
+    "image": "https://images.openfoodfacts.org/images/products/325/039/108/2377/front_fr.4.400.jpg"
+  },
   {
-      "nom":"yaourt nature",
-      "code_barre": "3033490905392",
-      "lien": "https://world.openfoodfacts.org/product/3033490905392/yaourt-nature-danone"
-    },
+    "nom": "yaourt nature",
+    "code_barre": "3033490905392",
+    "lien": "https://world.openfoodfacts.org/product/3033490905392/yaourt-nature-danone",
+    "nutriscore": "A",
+    "image": "https://images.openfoodfacts.org/images/products/303/349/090/5392/front_fr.3.400.jpg"
+  },
   {
-      "nom":"parmesan râpé",
-      "code_barre": "3350033275966",
-      "lien": "https://world.openfoodfacts.org/product/3350033275966/parmesan-rape-monoprix"
-    },
+    "nom": "parmesan râpé",
+    "code_barre": "3350033275966",
+    "lien": "https://world.openfoodfacts.org/product/3350033275966/parmesan-rape-monoprix",
+    "nutriscore": "E",
+    "image": "https://images.openfoodfacts.org/images/products/335/003/327/5966/front_fr.28.400.jpg"
+  },
   {
-      "nom":"petits piments doux verts",
-      "code_barre": "3450120000799",
-      "lien": "https://world.openfoodfacts.org/product/3450120000799/piments-verts-doux-guindillas-la-ciota"
-    }
+    "nom": "petits piments doux verts",
+    "code_barre": "3450120000799",
+    "lien": "https://world.openfoodfacts.org/product/3450120000799/piments-verts-doux-guindillas-la-ciota",
+    "nutriscore": "B",
+    "image": "https://images.openfoodfacts.org/images/products/345/012/000/0799/front_fr.11.400.jpg"
+  }
 ]
