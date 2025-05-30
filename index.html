@@ -56,6 +56,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#nutriscoremoyen">NutriScore moyen</a></li>
             <li class="nav-item"><a class="nav-link" href="#ingredients">Ingrédients</a></li>
             <li class="nav-item"><a class="nav-link" href="#preparation">Préparation</a></li>
             <li class="nav-item"><a class="nav-link" href="#apropos">À propos</a></li>
@@ -71,6 +72,22 @@
            class="header-img">
       <h1 class="mt-3 mb-2">Pudding de pain perdu au parmesan</h1>
     </header>
+
+    <!-- Nutriscore moyen -->
+    <section id="nutriscoremoyen" class="my-5">
+      <h2 class="section-title text-center">NutriScore moyen</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+          <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+              <p class="mb-3">Voici l’évaluation moyenne du plat selon les NutriScores de ses ingrédients :</p>
+              <div id="nutriscore-moyen" class="my-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <!-- Ingrédients -->
     <section id="ingredients" class="mb-5">
@@ -176,6 +193,46 @@
             "<p class='text-danger'>Impossible de charger les ingrédients.</p>";
         });
     });
+  
+    const scoreAffichage = document.getElementById('nutriscore-moyen');
+
+    // Initialisation des compteurs 
+    let nutriTotal = 0;
+    let nutriCount = 0;
+
+    fetch('ingredients.json')
+      .then(res => res.json())
+      .then(ingredients => {
+        // Boucle sur tous les ingredients 
+        const fetches = ingredients.map(ingredient => {
+          return fetch(`https://world.openfoodfacts.net/api/v2/product/${ingredient.code_barre}?fields=nutriscore_score`)
+            .then(res => res.json())
+            .then(data => {
+              const score = data.product.nutriscore_score;
+              if (typeof score === 'number') {
+                nutriTotal += score;
+                nutriCount++;
+              }
+            })
+        });
+
+        Promise.all(fetches).then(() => {
+          const moyenne = Math.round(nutriTotal / nutriCount);
+
+          let lettre;
+          if (moyenne <= -1) lettre = 'A';
+          else if (moyenne <= 2) lettre = 'B';
+          else if (moyenne <= 10) lettre = 'C';
+          else if (moyenne <= 18) lettre = 'D';
+          else lettre = 'E';
+
+          scoreAffichage.innerHTML = `
+            <img src="https://static.openfoodfacts.org/images/attributes/dist/nutriscore-${lettre.toLowerCase()}.svg"
+                alt="Nutri-score ${lettre}" style="height: 100px;">
+          `;
+        });
+      });
+
   </script>
 </body>
 </html>
